@@ -1,6 +1,7 @@
 def squareRoot():
     a = int(input("Enter number to get Square root : "))
-    if a > 0:
-        return a**(1/2)
-    else:
-        return "Invalid Input !!"
+    while a<0:
+        print ("Invalid Input!!Try Again")
+        a = int(input("Enter number to get Square root : "))
+
+    return a**(1/2)

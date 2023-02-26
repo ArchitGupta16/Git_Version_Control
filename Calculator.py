@@ -30,5 +30,9 @@ while choice in range(1,8) and cont.lower()=="y":
         print("Invalid Choice!!")
         exit()
     cont=input("Do you want to continue?(Y/N):")
-    choice = int(input("Enter your choice:"))
+    if cont.lower()=="n":
+        print("Thank You!!")
+        exit()
+    else:
+        choice = int(input("Enter your choice:"))
 
