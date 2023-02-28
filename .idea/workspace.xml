@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2f58b83-d2ca-4d77-a993-32003f7f3eda" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logarithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logarithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Multiplication.py" beforeDir="false" afterPath="$PROJECT_DIR$/Multiplication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SquareRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/SquareRoot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Subtraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/power.py" beforeDir="false" afterPath="$PROJECT_DIR$/Power.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
