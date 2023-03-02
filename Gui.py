@@ -79,21 +79,30 @@ def math_pressed(math):
         current = ""
 
     elif mathsign != str() and defxworking == False and percentt == False:
+        msg = ""
         if mathsign == '+':
             firstnum = round(float(firstnum + secondnum), 6)
         if mathsign == '-':
             firstnum = round(float(firstnum - secondnum), 6)
         if mathsign == '*':
+            screen.set(float(firstnum * secondnum))
             firstnum = round(float(firstnum * secondnum), 6)
         if mathsign == '/':
-            firstnum = round(float(firstnum / secondnum), 6)
-        screen.set(is_int(firstnum))
+            if secondnum == 0:
+                msg = "error"
+            else:
+                firstnum = round(float(firstnum / secondnum), 6)
+        if msg:
+            screen.set(float("inf"))
+        else:
+            screen.set(is_int(firstnum))
 
         mathsign = str(math)
         math_button_pressed()
         current = ""
 
     elif mathsign != str() and defxworking == True and percentt == False:
+        msg = ""
         if mathsign == '+':
             firstnum = round(firstnum + secondnum ** int(power), 6)
         if mathsign == '-':
@@ -101,9 +110,16 @@ def math_pressed(math):
         if mathsign == '*':
             firstnum = round(firstnum * (secondnum ** int(power)), 6)
         if mathsign == '/':
-            firstnum = round(firstnum / (secondnum ** int(power)), 6)
-        defxworking = False
-        screen.set(is_int(firstnum))
+            if secondnum == 0:
+                msg = "error"
+            else:
+                firstnum = round(firstnum / (secondnum ** int(power)), 6)
+        if msg:
+            screen.set(float("inf"))
+
+        else:
+            defxworking = False
+            screen.set(is_int(firstnum))
         defxworking = False
         mathsign = str(math)
         math_button_pressed()
@@ -139,6 +155,7 @@ def squareroot():
         screen.set(is_int(firstnum))
 
     if mathsign != str():
+        msg = ""
         if mathsign == '+':
             firstnum = round(sqrt(firstnum + float(secondnum)), 6)
         if mathsign == '-':
@@ -146,12 +163,20 @@ def squareroot():
         if mathsign == '*':
             firstnum = round(sqrt(firstnum * float(secondnum)), 6)
         if mathsign == '/':
-            firstnum = round(sqrt(firstnum / float(secondnum)), 6)
-
-        screen.set(is_int(firstnum))
-        secondnum = str()
-        mathsign = str()
-        current = ""
+            if secondnum == 0:
+                msg = "error"
+            else:
+                firstnum = round(sqrt(firstnum / float(secondnum)), 6)
+        if msg:
+            screen.set(float("inf"))
+            secondnum = str()
+            mathsign = str()
+            current = ""
+        else:
+            screen.set(is_int(firstnum))
+            secondnum = str()
+            mathsign = str()
+            current = ""
 
 
 def x():
@@ -172,6 +197,7 @@ def x():
 def result():
     global firstnum, secondnum, mathsign, current, power, defxworking, percentt
     if defxworking == False and percentt == False:
+        msg = ""
         if mathsign == '+':
             firstnum = round(float(firstnum + secondnum), 6)
         if mathsign == '-':
@@ -179,8 +205,14 @@ def result():
         if mathsign == '*':
             firstnum = round(float(firstnum * secondnum), 6)
         if mathsign == '/':
-            firstnum = round(float(firstnum / secondnum), 6)
-        screen.set(is_int(firstnum))
+            if secondnum == 0:
+                msg = "error"
+            else:
+                firstnum = round(float(firstnum / secondnum), 6)
+        if msg:
+            screen.set(float("inf"))
+        else:
+            screen.set(is_int(firstnum))
 
     if mathsign == str() and defxworking == True and percentt == False:
         firstnum = round(firstnum ** int(power), 6)
@@ -188,6 +220,7 @@ def result():
         screen.set(is_int(firstnum))
 
     if mathsign != str() and defxworking == True and percentt == False:
+        msg = ""
         if mathsign == '+':
             firstnum = round(firstnum + secondnum ** int(power), 6)
         if mathsign == '-':
@@ -195,9 +228,15 @@ def result():
         if mathsign == '*':
             firstnum = round(firstnum * (secondnum ** int(power)), 6)
         if mathsign == '/':
+            msg = "error"
             firstnum = round(firstnum / (secondnum ** int(power)), 6)
-        defxworking = False
-        screen.set(is_int(firstnum))
+        if msg:
+            screen.set(float("inf"))
+            defxworking = False
+
+        else:
+            defxworking = False
+            screen.set(is_int(firstnum))
 
     if defxworking == False and percentt == True:
         if mathsign == '+':
